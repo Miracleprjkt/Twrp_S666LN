@@ -24,7 +24,7 @@ $(call inherit-product, device/itel/S666LN/device.mk)
 PRODUCT_DEVICE := S666LN
 PRODUCT_NAME := twrp_S666LN
 PRODUCT_BRAND := Itel
-PRODUCT_MODEL := itel S666LN
+PRODUCT_MODEL := S666LN
 PRODUCT_MANUFACTURER := itel
 
 PRODUCT_GMS_CLIENTID_BASE := android-itel

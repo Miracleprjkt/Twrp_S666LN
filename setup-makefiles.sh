@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=itel-S666LN
+DEVICE=S666LN
 VENDOR=itel
 
 # Load extract_utils and do some sanity checks
