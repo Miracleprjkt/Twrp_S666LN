@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2023 The Android Open Source Project
+# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -27,26 +27,22 @@ AB_OTA_POSTINSTALL_CONFIG += \
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
-
-PRODUCT_PACKAGES += \
-    bootctrl.mt6789
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6789 \
-    libgptutils \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-mtkimpl \
+    android.hardware.boot@1.2-mtkimpl.recovery
+
+PRODUCT_PACKAGES += \
+    bootctrl \
+    bootctrl.recovery \
+    libmtk_bsg
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
